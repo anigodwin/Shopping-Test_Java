@@ -3,13 +3,17 @@ package com.shopping;
 import java.util.*;
 
 public class ShoppingBasket {
+    private Set<String> buy1Get1Free;
+    private Set<String> buy3ForPriceOf2;
+
+    public ShoppingBasket() {
+        this.buy1Get1Free = new HashSet<>();
+        buy1Get1Free.add("Melon");
+        this.buy3ForPriceOf2 = new HashSet<>();
+        buy3ForPriceOf2.add("Lime");
+    }
 
     public int calculateTotalCost(List<String> items) {
-        Set<String> buy1Get1Free = new HashSet<>();
-        buy1Get1Free.add("Melon");
-        Set<String> buy3ForPriceOf2 = new HashSet<>();
-        buy3ForPriceOf2.add("Lime");
-
         int totalCost = 0;
         int count1 = 0;
         int count2 = 0;
