@@ -12,7 +12,7 @@ public interface PriceRule {
             case "Banana" -> 20;
             case "Melon" -> 50;
             case "Lime" -> 15;
-            default -> 0;
+            default -> throw new InvalidItemException();
         };
     }
 

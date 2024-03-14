@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PriceRuleTest {
     @Test
@@ -55,7 +56,11 @@ public class PriceRuleTest {
         assertEquals(20, PriceRule.getPrice("Banana"));
         assertEquals(50, PriceRule.getPrice("Melon"));
         assertEquals(15, PriceRule.getPrice("Lime"));
-        assertEquals(0, PriceRule.getPrice("Orange"));
+    }
+
+    @Test
+    void getPriceWithInvalidItemTest() {
+        assertThrows(InvalidItemException.class, () -> PriceRule.getPrice("Orange"));
     }
 
 }
